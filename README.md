@@ -1,20 +1,35 @@
 Ruby vimrc
 ==========
 
+A quick vimrc for ruby programming
+
 Birth for what?
 =======
 
-Simplely config your vimrc, just for ruby programming
+Simple configure your vimrc, just for ruby programming
 
 
 How To Use?
 =========
 ```bash
-git clone <project>
+git clone https://windy@github.com/windy/ruby-vimrc.git
 
 cp ruby-vimrc/vimrc ~/.vimrc
 
-Open vim
+vim( open vim )
 
-:BundleInstall( in vim )
+:BundleInstall( in vim input this command)
 ```
+
+Thanks
+===========
+
+ * **Vundle**
+
+ * Bundle 'tpope/vim-fugitive'
+ * Bundle 'Lokaltog/vim-easymotion'
+ * Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+ * Bundle 'tpope/vim-rails.git'
+ * Bundle 'L9'
+ * Bundle 'FuzzyFinder'
+ * Bundle 'git://git.wincent.com/command-t.git'
