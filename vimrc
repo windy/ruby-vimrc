@@ -12,6 +12,7 @@ set nocompatible               " be iMproved
  set tabstop=2
  set softtabstop=2
  set shiftwidth=2
+ set expandtab
 
  " My Bundles here:
  "
