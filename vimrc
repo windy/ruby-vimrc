@@ -13,7 +13,8 @@ set nocompatible               " be iMproved
  set softtabstop=2
  set shiftwidth=2
  set expandtab
-
+ let mapleader= ","
+ " EasyMotion_leader_key .
  " My Bundles here:
  "
  " original repos on github
@@ -21,6 +22,9 @@ set nocompatible               " be iMproved
  Bundle 'Lokaltog/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  Bundle 'tpope/vim-rails.git'
+ Bundle 'mattn/zencoding-vim'
+ Bundle 'msanders/snipmate.vim'
+ Bundle 'vim-scripts/The-NERD-Commenter'
  " vim-scripts repos
  Bundle 'L9'
  Bundle 'FuzzyFinder'
