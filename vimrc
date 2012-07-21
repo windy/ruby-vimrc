@@ -13,6 +13,8 @@ set nocompatible               " be iMproved
  set softtabstop=2
  set shiftwidth=2
  set expandtab
+ ” config it for change buffer without save it when changed
+ set hidden "in order to switch between buffers with unsaved change
  let mapleader= ","
  " EasyMotion_leader_key .
  " My Bundles here:
@@ -28,8 +30,10 @@ set nocompatible               " be iMproved
  " vim-scripts repos
  Bundle 'L9'
  Bundle 'FuzzyFinder'
+ map <c-t> :FufCoverageFile!<CR>
  " non github repos
- Bundle 'git://git.wincent.com/command-t.git'
+ " if you like it more than fuf, uncomment here
+ " Bundle 'git://git.wincent.com/command-t.git'
  " ...
 
  filetype plugin indent on     " required! 
