@@ -13,7 +13,7 @@ set nocompatible               " be iMproved
  set softtabstop=2
  set shiftwidth=2
  set expandtab
- ” config it for change buffer without save it when changed
+ " config it for change buffer without save it when changed
  set hidden "in order to switch between buffers with unsaved change
  let mapleader= ","
  " EasyMotion_leader_key .
