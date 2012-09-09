@@ -12,13 +12,14 @@ Simple configure your vimrc, just for ruby programming
 How To Use?
 =========
 ```bash
-git clone https://windy@github.com/windy/ruby-vimrc.git
+$ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+$ git clone https://windy@github.com/windy/ruby-vimrc.git
 
-cp ruby-vimrc/vimrc ~/.vimrc
+$ cp ruby-vimrc/vimrc ~/.vimrc
 
-vim( open vim )
+$ vim( open vim )
 
-:BundleInstall( in vim input this command)
+  :BundleInstall( in vim input this command)
 ```
 
 Extra
