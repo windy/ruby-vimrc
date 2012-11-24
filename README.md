@@ -29,7 +29,7 @@ if you want be more awsome, use \<snipmate\> and \<vim-snipmate-ruby-snippets\>:
 install:
 ```
 git clone https://github.com/kaichen/vim-snipmate-ruby-snippets.git
-cp vim-snipmate-ruby-snippets/*.snippnets ~/.vim/bundle/snipmate.vim/snippets/
+cp vim-snipmate-ruby-snippets/*.snippets ~/.vim/bundle/snipmate.vim/snippets/
 
 then restart your vim.
 ```
