@@ -13,7 +13,7 @@ How To Use?
 =========
 ```bash
 $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-$ git clone https://windy@github.com/windy/ruby-vimrc.git
+$ git clone https://github.com/windy/ruby-vimrc.git
 
 $ cp ruby-vimrc/vimrc ~/.vimrc
 
