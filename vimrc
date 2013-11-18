@@ -54,6 +54,8 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'vim-scripts/The-NERD-Commenter'
 " indent guides
 Bundle 'nathanaelkane/vim-indent-guides'
+" scss syntax highlighting
+Bundle 'cakebaker/scss-syntax.vim'
 " indent guides shortcut
 map <silent><F7>  <leader>ig
 
