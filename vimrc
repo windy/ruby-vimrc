@@ -1,4 +1,5 @@
 set nocompatible               " be iMproved
+set encoding=utf8
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -63,6 +64,7 @@ Bundle 'scrooloose/nerdtree'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'slim-template/vim-slim.git'
 map <c-t> :FufCoverageFile!<CR>
 let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(tmp|log|db/migrate|vendor)'
 let g:fuf_enumeratingLimit = 50
@@ -73,6 +75,7 @@ let g:fuf_coveragefile_prompt = '=>'
 " ...
 
 filetype plugin indent on     " required! 
+syntax on
 "
 " Brief help
 " :BundleList          - list configured bundles
