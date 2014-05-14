@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 set encoding=utf8
-filetype off                   " required!
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -9,24 +9,25 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" my configure
+" 1 tab to 2 space for ruby
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-set noimdisable
-set iminsert=0
-set imsearch=0
-set noswapfile
-" config it for change buffer without save it when changed
-set hidden "in order to switch between buffers with unsaved change
-map <silent><F8> :NERDTree<CR>
+" number line show 
 set nu
+
+" input source improve for gui vim
+if has("gui_running")
+  set noimdisable
+  set imi=2
+  set ims=2
+endif
+
+set noswapfile
+"in order to switch between buffers with unsaved change
+set hidden
 map <tab> :tabn<CR>
-let g:user_zen_settings = {
-      \  'indentation' : '  '
-      \}
-let g:indent_guides_guide_size = 1
 
 " hightlight col and line
 set cursorline
@@ -42,46 +43,51 @@ endif
 
 let mapleader= ","
 " EasyMotion_leader_key .
-" My Bundles here:
-"
-" original repos on github
+" Bundle Plugin here for Ruby on Rails
+" git
 Bundle 'tpope/vim-fugitive'
+" ruby command for rvm
 Bundle 'tpope/vim-rvm'
+" quickly move cursor, try ,,w 
 Bundle 'Lokaltog/vim-easymotion'
+" quickly write HTML, just like zencoding but simple engough
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" power vim plugin for rails
 Bundle 'tpope/vim-rails.git'
-Bundle 'mattn/zencoding-vim'
-Bundle 'msanders/snipmate.vim'
+" vim rails syntax complete, try ctrl+x ctrl+u
+set completefunc=syntaxcomplete#Complete
+" quickly comment your code, try ,cc on selected line
 Bundle 'vim-scripts/The-NERD-Commenter'
 " indent guides
+let g:indent_guides_guide_size = 1
 Bundle 'nathanaelkane/vim-indent-guides'
-" scss syntax highlighting
-Bundle 'cakebaker/scss-syntax.vim'
 " indent guides shortcut
 map <silent><F7>  <leader>ig
 
+" file tree like something called IDE
 Bundle 'scrooloose/nerdtree'
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+map <silent><F8> :NERDTree<CR>
+" slim template support
 Bundle 'slim-template/vim-slim.git'
-map <c-t> :FufCoverageFile!<CR>
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|(tmp|log|db/migrate|vendor)'
-let g:fuf_enumeratingLimit = 50
-let g:fuf_coveragefile_prompt = '=>'
-" non github repos
-" if you like it more than fuf, uncomment here
-" Bundle 'git://git.wincent.com/command-t.git'
-" ...
+" coffeescript
+Bundle 'kchmck/vim-coffee-script'
+" basic dependence
+Bundle 'L9'
+" quickly search file(s), use ctrl+p, F5 refresh
+Bundle 'kien/ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 filetype plugin indent on     " required! 
 syntax on
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+
+" sass highlight
+Bundle 'JulesWang/css.vim'
+Bundle 'cakebaker/scss-syntax.vim'
+" support css word with -
+set iskeyword+=-
+
+" vim 7.4 backspace fix
+set backspace=indent,eol,start
