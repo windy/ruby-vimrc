@@ -27,7 +27,6 @@ endif
 set noswapfile
 "in order to switch between buffers with unsaved change
 set hidden
-map <tab> :tabn<CR>
 
 " hightlight col and line
 set cursorline
