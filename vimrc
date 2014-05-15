@@ -78,6 +78,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" ctrl+o for LRU buffer
+map <c-o> :CtrlPBuffer<CR>
 
 filetype plugin indent on     " required! 
 syntax on
