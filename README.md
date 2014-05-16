@@ -37,6 +37,10 @@ $ vim
 4. 使用 `ctrlp` 来搜索文件
 5. 阅读 `vimrc` 来快速了解
 
+## 文档更新
+
+用法指南文档: <http://ruby-china.org/topics/19315>
+
 
 ## 更新记录
 
