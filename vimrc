@@ -51,6 +51,7 @@ Bundle 'tpope/vim-rvm'
 Bundle 'Lokaltog/vim-easymotion'
 " quickly write HTML, just like zencoding but simple engough
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+let g:sparkupNextMapping= "<c-m>"
 " power vim plugin for rails
 Bundle 'tpope/vim-rails.git'
 " vim rails syntax complete, try ctrl+x ctrl+u
