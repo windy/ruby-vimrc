@@ -9,7 +9,7 @@ A quick vimrc for Ruby on Rails programming
 2. Only for Ruby on Rails
 3. Powerful
 
-## 安装方法 ( 10 月 17 日更新 Vundle 说明 )
+## 安装方法 ( 12 月 21 日更新 )
 
 前提: 不像其它的插件需要特定版本的 `vim`, 一般内置的 `vim` ( >= 7.3 ) 即可, 或者 mac 下使用 `brew install vim`
 
@@ -44,6 +44,11 @@ $ vim
 
 ## 更新记录
 
+### 2014.12.21
+1. 默认开启 256 色, 可以将 vim 配置的更色彩
+2. 将 html 插件切换到 emment, 更加易用
+3. 优化 css 的关键字支持
+
 ### 2014.10.17
 1. 更新了 Vundle 至最新版
 2. 新版 Vundle 导致 vim-slim 不正常, 修复之
@@ -60,5 +65,4 @@ $ vim
 * tpope/vim-rails (power tools for ruby on rails)
 * tpope/vim-fugitive (powerful vim git tool)
 * Lokaltog/vim-easymotion (quickly move your cursor)
-* rstacruz/sparkup (HTML write)
 * kien/ctrlp.vim (quickly search your code)

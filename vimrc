@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 set encoding=utf8
-filetype off
+"filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -50,8 +50,11 @@ Plugin 'tpope/vim-rvm'
 " quickly move cursor, try ,,w 
 Plugin 'Lokaltog/vim-easymotion'
 " quickly write HTML, just like zencoding but simple engough
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-let g:sparkupNextMapping= "<c-m>"
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"let g:sparkupNextMapping= "<c-m>"
+Plugin 'mattn/emmet-vim'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,eruby EmmetInstall
 " power vim plugin for rails
 Plugin 'tpope/vim-rails.git'
 " vim rails syntax complete, try ctrl+x ctrl+u
@@ -64,11 +67,16 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " indent guides shortcut
 map <silent><F7>  <leader>ig
 
+" markdown support
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 " file tree like something called IDE
 Plugin 'scrooloose/nerdtree'
 map <silent><F8> :NERDTree<CR>
 " coffeescript
 Plugin 'kchmck/vim-coffee-script'
+autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 " basic dependence
 Plugin 'L9'
 " slim template support
@@ -92,7 +100,10 @@ Plugin 'cakebaker/scss-syntax.vim'
 
 call vundle#end()
 " support css word with -
-set iskeyword+=-
+autocmd FileType css,scss setlocal iskeyword+=-
 
 " vim 7.4 backspace fix
 set backspace=indent,eol,start
+set t_Co=256
+" colorscheme, read here: http://vim.wikia.com/wiki/Change_the_color_scheme
+" colorscheme molokai
