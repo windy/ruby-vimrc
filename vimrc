@@ -54,6 +54,7 @@ Plugin 'Lokaltog/vim-easymotion'
 "let g:sparkupNextMapping= "<c-m>"
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
+let g:user_emmet_mode='iv'
 autocmd FileType html,css,eruby EmmetInstall
 " power vim plugin for rails
 Plugin 'tpope/vim-rails.git'
@@ -100,7 +101,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 
 call vundle#end()
 " support css word with -
-autocmd FileType css,scss setlocal iskeyword+=-
+autocmd FileType css,scss,slim setlocal iskeyword+=-
 
 " vim 7.4 backspace fix
 set backspace=indent,eol,start
