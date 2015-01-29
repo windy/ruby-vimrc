@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Plugin manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/Vundle.vim'
 
 " 1 tab to 2 space for ruby
@@ -14,7 +14,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-" number line show 
+" number line show
 set nu
 
 " input source improve for gui vim
@@ -47,7 +47,7 @@ let mapleader= ","
 Plugin 'tpope/vim-fugitive'
 " ruby command for rvm
 Plugin 'tpope/vim-rvm'
-" quickly move cursor, try ,,w 
+" quickly move cursor, try ,,w
 Plugin 'Lokaltog/vim-easymotion'
 " quickly write HTML, just like zencoding but simple engough
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -89,10 +89,11 @@ Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|(optimized|compiled|node_modules)$'
 map <c-o> :CtrlPBuffer<CR>
 
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 syntax on
 
 " sass highlight
@@ -101,10 +102,12 @@ Plugin 'cakebaker/scss-syntax.vim'
 
 call vundle#end()
 " support css word with -
-autocmd FileType css,scss,slim setlocal iskeyword+=-
+autocmd FileType css,scss,slim,html,eruby,coffee,javascript setlocal iskeyword+=-
 
 " vim 7.4 backspace fix
 set backspace=indent,eol,start
 set t_Co=256
 " colorscheme, read here: http://vim.wikia.com/wiki/Change_the_color_scheme
 " colorscheme molokai
+" clear trailing spaces when u save
+autocmd BufWritePre * :%s/\s\+$//e
