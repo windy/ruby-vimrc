@@ -9,7 +9,7 @@ A quick vimrc for Ruby on Rails programming
 2. Only for Ruby on Rails
 3. Powerful
 
-## 安装方法 ( 12 月 21 日更新 )
+## 安装方法 ( 2015.1.30 更新 )
 
 前提: 不像其它的插件需要特定版本的 `vim`, 一般内置的 `vim` ( >= 7.3 ) 即可, 或者 mac 下使用 `brew install vim`
 
@@ -43,6 +43,12 @@ $ vim
 
 
 ## 更新记录
+
+### 2015.1.30
+
+1. 使用 emmet 来编写 HTML5 网页
+2. 增加关键字补全对 - 的支持
+3. 增加自动去除行尾空格特性
 
 ### 2014.12.21
 1. 默认开启 256 色, 可以将 vim 配置的更色彩
