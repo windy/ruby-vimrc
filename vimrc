@@ -103,6 +103,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 call vundle#end()
 " support css word with -
 autocmd FileType css,scss,slim,html,eruby,coffee,javascript setlocal iskeyword+=-
+autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " vim 7.4 backspace fix
 set backspace=indent,eol,start
