@@ -35,8 +35,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 
-Plugin 'CodeFalling/fcitx-vim-osx'
-
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-dispatch'
