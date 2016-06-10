@@ -76,6 +76,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 map <silent><F7>  <leader>ig
 
 " markdown support
+let g:indent_guides_guide_size = 1
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
