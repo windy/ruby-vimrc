@@ -76,7 +76,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 map <silent><F7>  <leader>ig
 
 " markdown support
-let g:indent_guides_guide_size = 1
+let g:vim_markdown_folding_disabled = 1
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
@@ -98,7 +98,7 @@ Plugin 'slim-template/vim-slim.git'
 autocmd BufNewFile,BufRead *.slim set filetype=slim
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
 " quickly search file(s), use ctrl+p, F5 refresh
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -110,5 +110,7 @@ map <c-o> :CtrlPBuffer<CR>
 Plugin 'JulesWang/css.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'isRuslan/vim-es6'
+
+Plugin 'zerowidth/vim-copy-as-rtf'
 
 call vundle#end()
