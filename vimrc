@@ -97,14 +97,11 @@ Plugin 'slim-template/vim-slim.git'
 " hack filetype for slim
 autocmd BufNewFile,BufRead *.slim set filetype=slim
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
-" quickly search file(s), use ctrl+p, F5 refresh
-Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|(optimized|compiled|node_modules|bower_compenents)$'
-map <c-o> :CtrlPBuffer<CR>
+" quickly search file(s), use fzf.vim
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-o> :Buffers<Cr>
 
 " sass highlight
 Plugin 'JulesWang/css.vim'

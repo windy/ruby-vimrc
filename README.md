@@ -9,7 +9,7 @@ A quick vimrc for Ruby on Rails programming
 2. Only for Ruby on Rails
 3. Powerful
 
-## 安装方法 ( 2015.1.30 更新 )
+## 安装方法
 
 前提: 不像其它的插件需要特定版本的 `vim`, 一般内置的 `vim` ( >= 7.3 ) 即可, 或者 mac 下使用 `brew install vim`
 
@@ -43,6 +43,10 @@ $ vim
 
 
 ## 更新记录
+
+### 2019.6.3
+
+1. 移除 ctrlp，改用 fzf 插件，更快更准确的搜索
 
 ### 2015.1.30
 
