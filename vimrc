@@ -1,4 +1,5 @@
 set nocompatible               " be iMproved
+set clipboard=unnamed
 
 " 1 tab to 2 space for ruby
 set tabstop=2
@@ -68,7 +69,8 @@ Plugin 'tpope/vim-rails.git'
 " vim rails syntax complete, try ctrl+x ctrl+u
 set completefunc=syntaxcomplete#Complete
 " quickly comment your code, try ,cc on selected line
-Plugin 'vim-scripts/The-NERD-Commenter'
+Plugin 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims=1
 " indent guides
 let g:indent_guides_guide_size = 1
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -85,8 +87,6 @@ Plugin 'scrooloose/nerdtree'
 map <silent><F8> :NERDTree<CR>
 map <leader>r :NERDTreeFind<cr>
 map <leader>e :NERDTreeToggle<cr>
-map <leader>y "+y<cr>
-map <leader>p "+p<cr>
 " coffeescript
 Plugin 'kchmck/vim-coffee-script'
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
@@ -100,8 +100,36 @@ autocmd BufNewFile,BufRead *.es6 set filetype=javascript
 " quickly search file(s), use fzf.vim
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-o> :Buffers<Cr>
+nnoremap <silent> <C-k> :call SearchWordWithAg()<CR>
+vnoremap <silent> <C-k> :call SearchVisualSelectionWithAg()<CR>
+
+if executable('ag')
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -U -g ""'
+endif
+
+function! SearchWordWithAg()
+  execute 'Ag' expand('<cword>')
+endfunction
+
+function! SearchVisualSelectionWithAg() range
+  let old_reg = getreg('"')
+  let old_regtype = getregtype('"')
+  let old_clipboard = &clipboard
+  set clipboard&
+  normal! ""gvy
+  let selection = getreg('"')
+  call setreg('"', old_reg, old_regtype)
+  let &clipboard = old_clipboard
+  execute 'Ag' selection
+endfunction
+
+" auto-manage ctags file
+Plugin 'ludovicchabant/vim-gutentags'
+nnoremap <C-i> :Tags<Cr>
+nnoremap <C-u> :Ag<Cr>
 
 " sass highlight
 Plugin 'JulesWang/css.vim'

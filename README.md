@@ -11,7 +11,19 @@ A quick vimrc for Ruby on Rails programming
 
 ## 安装方法
 
-前提: 不像其它的插件需要特定版本的 `vim`, 一般内置的 `vim` ( >= 7.3 ) 即可, 或者 mac 下使用 `brew install vim`
+vim: >= 8.0
+
+Mac 用户建议直接用以下安装
+
+```bash
+brew install vim
+```
+
+```bash
+# .bashrc 添加以下
+alias vi=/usr/local/bin/vim
+alias vim=/usr/local/bin/vim
+```
 
 继续输入以下指令:
 
@@ -34,7 +46,7 @@ $ vim
 1. 使用 `vim-rails` 来高效开发 Rails
 2. 使用 `NERDTree` 来管理文件树
 3. 几款简洁的高亮与注释插件
-4. 使用 `ctrlp` 来搜索文件
+4. 使用 `fzf.vim` 来搜索文件
 5. 阅读 `vimrc` 来快速了解
 
 ## 文档更新
@@ -43,6 +55,11 @@ $ vim
 
 
 ## 更新记录
+
+### 2019.6.9
+
+1. 增加 Ag 快速搜索功能
+2. 改进 fzf 配置, 更好用
 
 ### 2019.6.3
 
