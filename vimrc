@@ -23,6 +23,8 @@ syntax on
 autocmd FileType css,scss,slim,html,eruby,coffee,javascript setlocal iskeyword+=-
 autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
+autocmd BufEnter *.png,*.jpg,*gif exec "! open ".expand("%") | :bw
+
 " vim 7.4 backspace fix
 set backspace=indent,eol,start
 set t_Co=256
@@ -84,6 +86,8 @@ Plugin 'plasticboy/vim-markdown'
 
 " file tree like something called IDE
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 map <silent><F8> :NERDTree<CR>
 map <leader>r :NERDTreeFind<cr>
 map <leader>e :NERDTreeToggle<cr>
