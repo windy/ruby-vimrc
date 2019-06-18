@@ -56,6 +56,11 @@ $ vim
 
 ## 更新记录
 
+### 2019.6.18
+
+1. 替换 Ag 为 Rg 搜索，更加快速
+2. 添加 vim-xkbswitch 插件，回到普通模式自动切换输入法
+
 ### 2019.6.9
 
 1. 增加 Ag 快速搜索功能
@@ -84,12 +89,3 @@ $ vim
 1. 去掉一些重量性的插件
 2. 整理了注释
 3. 精简了插件, 优化 `vim-rails` 的补全
-
-谢谢以下插件的作者们提供这么好的插件
-===========
-
-* Vundle
-* tpope/vim-rails (power tools for ruby on rails)
-* tpope/vim-fugitive (powerful vim git tool)
-* Lokaltog/vim-easymotion (quickly move your cursor)
-* kien/ctrlp.vim (quickly search your code)

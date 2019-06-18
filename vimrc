@@ -101,24 +101,24 @@ Plugin 'slim-template/vim-slim.git'
 " hack filetype for slim
 autocmd BufNewFile,BufRead *.slim set filetype=slim
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
+
 " quickly search file(s), use fzf.vim
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-o> :Buffers<Cr>
-nnoremap <silent> <C-k> :call SearchWordWithAg()<CR>
-vnoremap <silent> <C-k> :call SearchVisualSelectionWithAg()<CR>
 
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -U -g ""'
-endif
+" `brew install ripgrep` before you use rg command
+nnoremap <C-u> :Rg<Cr>
+nnoremap <silent> <C-k> :call SearchWordWithRg()<CR>
+vnoremap <silent> <C-k> :call SearchVisualSelectionWithRg()<CR>
 
-function! SearchWordWithAg()
-  execute 'Ag' expand('<cword>')
+function! SearchWordWithRg()
+  execute 'Rg' expand('<cword>')
 endfunction
 
-function! SearchVisualSelectionWithAg() range
+function! SearchVisualSelectionWithRg() range
   let old_reg = getreg('"')
   let old_regtype = getregtype('"')
   let old_clipboard = &clipboard
@@ -127,13 +127,12 @@ function! SearchVisualSelectionWithAg() range
   let selection = getreg('"')
   call setreg('"', old_reg, old_regtype)
   let &clipboard = old_clipboard
-  execute 'Ag' selection
+  execute 'Rg' selection
 endfunction
 
 " auto-manage ctags file
 Plugin 'ludovicchabant/vim-gutentags'
 nnoremap <C-i> :Tags<Cr>
-nnoremap <C-u> :Ag<Cr>
 
 " sass highlight
 Plugin 'JulesWang/css.vim'
@@ -141,5 +140,16 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'isRuslan/vim-es6'
 
 Plugin 'zerowidth/vim-copy-as-rtf'
+
+" Auto switch input source to us keyword when vim go back to normal mode
+" Before using this, please install these dependencies
+" 1. libxkbswitch.dylib( https://github.com/myshov/libxkbswitch-macosx )
+"   eg: cp ~/Download/libxkbswitch-macosx/bin/libxkbswitch.dylib /usr/local/lib
+" 2. Xkbswitch-macosx( https://github.com/myshov/xkbswitch-macosx )
+"   eg: cp ~/Download/xkbswitch-macosx/bin/xkbswitch /usr/local/bin
+" At last, install this Plugin
+let g:XkbSwitchEnabled=1
+let g:XkbSwitchNLayout = 'us'
+Plugin 'lyokha/vim-xkbswitch'
 
 call vundle#end()
