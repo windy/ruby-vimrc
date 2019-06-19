@@ -101,6 +101,9 @@ Plugin 'slim-template/vim-slim.git'
 " hack filetype for slim
 autocmd BufNewFile,BufRead *.slim set filetype=slim
 autocmd BufNewFile,BufRead *.es6 set filetype=javascript
+autocmd BufNewFile,BufRead *.json.jb set filetype=ruby
+autocmd BufNewFile,BufRead *.wxml set filetype=xml
+autocmd BufNewFile,BufRead *.wxss set filetype=css
 
 " quickly search file(s), use fzf.vim
 Plugin 'junegunn/fzf'
@@ -151,5 +154,7 @@ Plugin 'zerowidth/vim-copy-as-rtf'
 let g:XkbSwitchEnabled=1
 let g:XkbSwitchNLayout = 'us'
 Plugin 'lyokha/vim-xkbswitch'
+
+Plugin 'chemzqm/wxapp.vim'
 
 call vundle#end()
