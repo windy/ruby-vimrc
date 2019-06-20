@@ -25,6 +25,13 @@ alias vi=/usr/local/bin/vim
 alias vim=/usr/local/bin/vim
 ```
 
+安装依赖:
+
+```bash
+brew install fzf
+brew install ripgrep
+```
+
 继续输入以下指令:
 
 ```bash
