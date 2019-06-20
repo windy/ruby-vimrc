@@ -53,10 +53,10 @@ endif
 let mapleader= ","
 " EasyMotion_leader_key .
 " Plugin Plugin here for Ruby on Rails
+" ruby
+Plugin 'vim-ruby/vim-ruby'
 " git
 Plugin 'tpope/vim-fugitive'
-" ruby command for rvm
-Plugin 'tpope/vim-rvm'
 " quickly move cursor, try ,,w
 Plugin 'Lokaltog/vim-easymotion'
 " quickly write HTML, just like zencoding but simple engough
@@ -109,13 +109,17 @@ autocmd BufNewFile,BufRead *.wxss set filetype=css
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-p> :Files<Cr>
 nnoremap <C-o> :Buffers<Cr>
 
 " `brew install ripgrep` before you use rg command
 nnoremap <C-u> :Rg<Cr>
 nnoremap <silent> <C-k> :call SearchWordWithRg()<CR>
 vnoremap <silent> <C-k> :call SearchVisualSelectionWithRg()<CR>
+
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!{.git,node_modules}/*" 2>/dev/null'
+endif
 
 function! SearchWordWithRg()
   execute 'Rg' expand('<cword>')
