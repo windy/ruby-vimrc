@@ -13,6 +13,9 @@ set noswapfile
 "in order to switch between buffers with unsaved change
 set hidden
 
+" cancel shift+k bind
+map <S-k> <Nop>
+
 " hightlight column and line
 set cursorline
 "set cursorcolumn
@@ -20,7 +23,7 @@ filetype plugin indent on
 syntax on
 
 " support css word with -
-autocmd FileType css,scss,slim,html,eruby,coffee,javascript setlocal iskeyword+=-
+autocmd FileType css,scss,slim,html,eruby,coffee,javascript,wxml setlocal iskeyword+=-
 autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 autocmd BufEnter *.png,*.jpg,*gif exec "! open ".expand("%") | :bw
@@ -65,7 +68,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
 let g:user_emmet_mode='iv'
-autocmd FileType html,css,eruby EmmetInstall
+autocmd FileType html,css,eruby,xml EmmetInstall
 " power vim plugin for rails
 Plugin 'tpope/vim-rails.git'
 " vim rails syntax complete, try ctrl+x ctrl+u
@@ -87,7 +90,7 @@ Plugin 'plasticboy/vim-markdown'
 " file tree like something called IDE
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 map <silent><F8> :NERDTree<CR>
 map <leader>r :NERDTreeFind<cr>
 map <leader>e :NERDTreeToggle<cr>
@@ -137,10 +140,6 @@ function! SearchVisualSelectionWithRg() range
   execute 'Rg' selection
 endfunction
 
-" auto-manage ctags file
-Plugin 'ludovicchabant/vim-gutentags'
-nnoremap <C-i> :Tags<Cr>
-
 " sass highlight
 Plugin 'JulesWang/css.vim'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -148,16 +147,9 @@ Plugin 'isRuslan/vim-es6'
 
 Plugin 'zerowidth/vim-copy-as-rtf'
 
-" Auto switch input source to us keyword when vim go back to normal mode
-" Before using this, please install these dependencies
-" 1. libxkbswitch.dylib( https://github.com/myshov/libxkbswitch-macosx )
-"   eg: cp ~/Download/libxkbswitch-macosx/bin/libxkbswitch.dylib /usr/local/lib
-" 2. Xkbswitch-macosx( https://github.com/myshov/xkbswitch-macosx )
-"   eg: cp ~/Download/xkbswitch-macosx/bin/xkbswitch /usr/local/bin
-" At last, install this Plugin
-let g:XkbSwitchEnabled=1
-let g:XkbSwitchNLayout = 'us'
-Plugin 'lyokha/vim-xkbswitch'
+" auto-switch input source to en for normal mode
+" see here for install:  https://github.com/xcodebuild/fcitx-remote-for-osx
+Plugin 'CodeFalling/fcitx-vim-osx'
 
 Plugin 'chemzqm/wxapp.vim'
 
